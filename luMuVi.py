@@ -38,13 +38,6 @@ while(1):
         continue
     else:
         fft = np.abs(scipy.fft.fft(data))
-    """
-    vamos pegar o maximo valor, pra setar a altura da figura
-    na vdd vamos ter q normalizar pra uma certa altura
-
-    primeiro vamos fazer o frame de [0, RATE] e dps espelhamos ele
-    acho q assim diminui a complexidade
-    """
 
     height_scaled_fft = np.floor(min_max_scaler(fft[0: CHUNK//2], 1.6*HEIGHT))
 
